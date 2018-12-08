@@ -241,7 +241,9 @@ public void copyStateTo(Object target) {
 }
 
 // 省略 get and set
+```
 
+```java
 public class Bootstrap extends AppConfig {
 
 	public Bootstrap(AppConfig appConfig) {
@@ -249,11 +251,14 @@ public class Bootstrap extends AppConfig {
 		// 如此，appConfig 中属性值已经可以直接 getXXX 了，否则还得 appConfig.getXXX，当属性多时有特效
 	}
 }
+```
 
+```java
 // 使用
 Bootstrap bootstrap = new Bootstrap(AppConfig.load("/config/appconfig.properties"));
+```
 
-
+```
 //文件内容
 app.name=luxury-lunch
 app.name2=luxury-lunch2
