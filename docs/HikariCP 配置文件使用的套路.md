@@ -28,7 +28,7 @@ private void loadProperties(String propertyFileName) {
 }
 ```
 
-其中该方法支持两种形式的入参，第一种是使用物理绝对路径，如 `F:\\git\\luxury-lunch\\src\\test\\resources\\HikariConfigTest.properties`；当然，我们也可以使用相对路径，如 `/HikariConfigTest.properties`，注意一定要有 `/`，`/`表示从 `classpath` 下寻找该文件。具体使用可以参考[Java 中 getResourceAsStream 的用法](http://www.cnblogs.com/macwhirr/p/8116583.html)
+其中该方法支持两种形式的入参，第一种是使用物理绝对路径，如 `F:\\git\\luxury-lunch\\src\\test\\resources\\HikariConfigTest.properties`；当然，我们也可以使用相对路径，如 `/HikariConfigTest.properties`，注意一定要有 `/`，`/`表示从 `classpath` 下寻找该文件。具体使用可以参考 [Java 中 getResourceAsStream 的用法](http://www.cnblogs.com/macwhirr/p/8116583.html)
 
 显然，我们一般都会使用相对路径。同时，这段代码使用了 `try-resource` 风格，可以优雅的关闭文件流。所以，这段读取 `properties` 文件的代码现已加入豪华午餐。
 
