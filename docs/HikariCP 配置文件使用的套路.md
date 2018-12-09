@@ -99,7 +99,7 @@ public static Set<String> getPropertyNames(final Class<?> targetClass) {
 
 ### setTargetFromProperties
 
-该方法是将 `properties` 文件中各个值反射设置给类的属性。但是原代码中不支持 `boolean` 类型，所以做了一下修改。
+该方法是将 `properties` 文件中各个值反射设置给类的属性。但是原代码中不支持 `double` 类型，所以做了一下修改。
 
 ```java
 // 尝试使用类中变量名进行转换，如果类型为布尔且以 is 开头，请配置 properties 文件时去除 is，否则会报错
