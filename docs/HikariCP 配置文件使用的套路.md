@@ -252,12 +252,6 @@ public class Bootstrap extends AppConfig {
 	}
 }
 ```
-
-```java
-// 使用
-Bootstrap bootstrap = new Bootstrap(AppConfig.load("/config/appconfig.properties"));
-```
-
 ```
 //文件内容
 app.name=luxury-lunch
@@ -269,4 +263,9 @@ app.name6=luxury-lunch6
 app.name7=luxury-lunch7
 app.version=20181208
 app.complete=false
+```
+
+```java
+// 使用
+Bootstrap bootstrap = new Bootstrap(AppConfig.load("/config/appconfig.properties"));
 ```
