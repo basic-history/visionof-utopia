@@ -238,8 +238,8 @@ static {
 
 ### j.u.c
 
-`CopyOnWriteArrayList`
-`Executors.newSingleThreadScheduledExecutor`
-`scheduleWithFixedDelay`
-`putIfAbsent`
-`volatile`
+- `CopyOnWriteArrayList`
+- `Executors.newSingleThreadScheduledExecutor`
+- `scheduleWithFixedDelay`
+- `putIfAbsent`
+- `volatile`
