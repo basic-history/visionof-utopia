@@ -11,7 +11,6 @@ public class DynamicConfigLoaderTest {
 	public static void main(String[] args) throws InterruptedException {
 		DynamicConfig config = DynamicConfigLoader.load("config/appconfig.properties");
 		config.addListener(new Listener() {
-			
 			@Override
 			public void onLoad(DynamicConfig config) {
 				System.out.println("我被重新载入了。。");
