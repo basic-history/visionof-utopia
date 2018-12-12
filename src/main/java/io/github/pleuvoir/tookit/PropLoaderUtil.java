@@ -22,17 +22,14 @@ public abstract class PropLoaderUtil {
 
 	/**
 	 * 加载 properties 文件，可以使用绝对路径或者相对路径
-	 * <p>
-	 * 注意：基于相对路径的读取依赖于 getResourceAsStream 方法，所以读取的文件路径只局限于工程的源文件夹中，包括在工程src根目录下，以及类包里面任何位置，
-	 * 如果配置文件路径是在除了源文件夹之外的其他文件夹中时，该方法是用不了的。
-	 * <p>
-	 * @param propertyFileName	文件名称，可以使用绝对路径或者相对路径，如文件在 classpath 下，可以使用 / 开头读取
+	 * @param propertyFileName	文件名称，可以使用绝对路径或者相对路径
 	 * @return	返回设值后的 Properties 对象
 	 */
 	public static Properties loadProperties(String propertyFileName) {
 		Properties props = new Properties();
 		final File propFile = new File(propertyFileName);
-		try (final InputStream is = propFile.isFile() ? new FileInputStream(propFile): PropLoaderUtil.class.getResourceAsStream(propertyFileName)) {
+		try (final InputStream is = propFile.isFile() ? new FileInputStream(propFile)
+				: PropLoaderUtil.class.getClassLoader().getResourceAsStream(propertyFileName)) {
 			if (is != null) {
 				props.load(is);
 			} else {

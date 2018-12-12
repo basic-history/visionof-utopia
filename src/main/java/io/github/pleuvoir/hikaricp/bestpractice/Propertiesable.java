@@ -6,7 +6,7 @@ import java.lang.reflect.Modifier;
 import io.github.pleuvoir.tookit.PropLoaderUtil;
 
 /**
- * 代表支持 properties 文件到对象的转换
+ * 支持 properties 文件到对象的转换
  * @author pleuvoir
  *
  */
