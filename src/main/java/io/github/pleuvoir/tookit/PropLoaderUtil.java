@@ -22,7 +22,6 @@ public abstract class PropLoaderUtil {
 
 	/**
 	 * 加载 properties 文件，可以使用绝对路径或者相对路径
-	 * 
 	 * <p>
 	 * 注意：基于相对路径的读取依赖于 getResourceAsStream 方法，所以读取的文件路径只局限于工程的源文件夹中，包括在工程src根目录下，以及类包里面任何位置，
 	 * 如果配置文件路径是在除了源文件夹之外的其他文件夹中时，该方法是用不了的。
@@ -127,7 +126,6 @@ public abstract class PropLoaderUtil {
 	      String methodName = "set" + propName.substring(0, 1).toUpperCase(Locale.ENGLISH) + propName.substring(1);
 	      Method writeMethod = methods.stream().filter(m -> m.getName().equals(methodName) && m.getParameterCount() == 1).findFirst().orElse(null);
 
-	      // 这里布尔类型会有问题，建议在类中设置布尔类型的变量时是不要以 is 开头，如果已经使用了 is 开头，那么 properties 文件中的 key 请去掉 is
 	      if (writeMethod == null) {
 	         String booleanMethodName =  "is" + propName.substring(0, 1).toUpperCase(Locale.ENGLISH) + propName.substring(1);
 	         writeMethod = methods.stream().filter(m -> m.getName().equals(booleanMethodName) && m.getParameterCount() == 1).findFirst().orElse(null);

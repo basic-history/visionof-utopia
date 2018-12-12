@@ -268,4 +268,12 @@ app.complete=false
 ```java
 // 使用
 Bootstrap bootstrap = new Bootstrap(AppConfig.load("/config/appconfig.properties"));
+
+// 代表支持 properties 文件到对象的转换，属性名称和文件内容一一对应即可
+public class AppConfig2 implements Propertiesable {
+	private String name;
+	// 省略 ..
+}
+AppConfig2 appConfig2 = new AppConfig2();
+appConfig2.load("/config/appconfig.properties", "app.");
 ```
