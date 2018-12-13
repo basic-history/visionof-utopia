@@ -23,6 +23,10 @@ public class DynamicConfigLoaderTest {
 				System.out.println("我被重新载入了22。。");
 			}
 		});
+		
+		// 直接返回，不会再次读取
+		DynamicConfigLoader.load("config/appconfig.properties");
+		
 		while(true) {
 			TimeUnit.SECONDS.sleep(1);
 			System.out.println(config.getString("app.name"));

@@ -4,7 +4,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 public class DefaultDynamicConfigFactory implements DynamicConfigFactory {
-	
+
 	private final ConfigWatcher watcher = new ConfigWatcher();
 	private final ConcurrentMap<String, DefaultDynamicConfig> configs = new ConcurrentHashMap<>();
 
@@ -13,7 +13,6 @@ public class DefaultDynamicConfigFactory implements DynamicConfigFactory {
 		if (configs.containsKey(name)) {
 			return configs.get(name);
 		}
-
 		return doCreate(name, failOnNotExist);
 	}
 
