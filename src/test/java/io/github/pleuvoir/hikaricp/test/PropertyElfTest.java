@@ -7,7 +7,7 @@ import com.alibaba.fastjson.JSON;
 
 import io.github.pleuvoir.hikaricp.HikariConfig;
 import io.github.pleuvoir.hikaricp.PropertyElf;
-import io.github.pleuvoir.tookit.PropLoaderUtil;
+import io.github.pleuvoir.tookit.configuration.object.PropLoaderUtil;
 
 /**
  * 测试 #{PropertyElf} 类

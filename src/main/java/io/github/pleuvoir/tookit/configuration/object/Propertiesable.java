@@ -1,12 +1,11 @@
-package io.github.pleuvoir.hikaricp.bestpractice;
+package io.github.pleuvoir.tookit.configuration.object;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
-import io.github.pleuvoir.tookit.configuration.object.PropLoaderUtil;
-
 /**
- * 支持 properties 文件到对象的转换
+ * 支持 properties 文件到对象的转换<br>
+ * 使用时继承此接口，建议仅当配置项只会使用一次时使用，因为每次创建对象都会重新载入文件
  * @author pleuvoir
  *
  */

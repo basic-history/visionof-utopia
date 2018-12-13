@@ -1,4 +1,4 @@
-package io.github.pleuvoir.tookit;
+package io.github.pleuvoir.tookit.configuration.object;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;

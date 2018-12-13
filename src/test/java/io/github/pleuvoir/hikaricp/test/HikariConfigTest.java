@@ -1,7 +1,5 @@
 package io.github.pleuvoir.hikaricp.test;
 
-import static org.junit.Assert.assertEquals;
-
 import java.util.Properties;
 
 import org.junit.Test;
@@ -9,8 +7,8 @@ import org.junit.Test;
 import com.alibaba.fastjson.JSON;
 
 import io.github.pleuvoir.hikaricp.HikariConfig;
-import io.github.pleuvoir.tookit.CopyStateUtil;
-import io.github.pleuvoir.tookit.PropLoaderUtil;
+import io.github.pleuvoir.tookit.configuration.object.CopyStateUtil;
+import io.github.pleuvoir.tookit.configuration.object.PropLoaderUtil;
 
 /**
  * 测试 #{HikariConfig} 中让我眼前一亮的方法

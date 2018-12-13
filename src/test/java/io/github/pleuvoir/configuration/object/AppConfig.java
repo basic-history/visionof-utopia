@@ -1,11 +1,8 @@
-package io.github.pleuvoir.hikaricp.bestpractice;
+package io.github.pleuvoir.configuration.object;
 
-import io.github.pleuvoir.tookit.configuration.object.CopyStateUtil;
-import io.github.pleuvoir.tookit.configuration.object.PropLoaderUtil;
+import io.github.pleuvoir.tookit.configuration.object.Propertiesable;
 
-public class AppConfig {
-
-	private static final AppConfig INSTANCE = new AppConfig();
+public class AppConfig implements Propertiesable {
 
 	private String name;
 	private String name2;
@@ -17,14 +14,15 @@ public class AppConfig {
 	private String name8;
 	private String version;
 	private boolean complete;
-
+	private String smile;
 	
-	public static AppConfig load(String propPath) {
-		return PropLoaderUtil.setTargetFromProperties(INSTANCE, propPath, "app.");
+
+	public String getSmile() {
+		return smile;
 	}
 
-	public void copyStateTo(Object target) {
-		CopyStateUtil.copyStateTo(this, target);
+	public void setSmile(String smile) {
+		this.smile = smile;
 	}
 
 	public String getName() {
@@ -105,5 +103,12 @@ public class AppConfig {
 
 	public void setName8(String name8) {
 		this.name8 = name8;
+	}
+
+	@Override
+	public String toString() {
+		return String.format(
+				"AppConfig [name=%s, name2=%s, name3=%s, name4=%s, name5=%s, name6=%s, name7=%s, name8=%s, version=%s, complete=%s, smile=%s]",
+				name, name2, name3, name4, name5, name6, name7, name8, version, complete, smile);
 	}
 }
