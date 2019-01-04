@@ -22,7 +22,7 @@ public abstract class RefreshableConfig {
 
 	private static final String LIST_SEPARATOR = ",";
 	// TimeUnit: second
-	private static final int CONFIG_REFRESH_INTERVAL = 60;
+	private static final int CONFIG_REFRESH_INTERVAL = 10;	
 
 	@Autowired
 	private ConfigurableEnvironment environment;
@@ -35,6 +35,7 @@ public abstract class RefreshableConfig {
 	 */
 	protected abstract List<RefreshablePropertySource> getRefreshablePropertySources();
 
+	// 第一次启动时便执行一次
 	@PostConstruct
 	public void setup() {
 

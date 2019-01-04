@@ -7,6 +7,7 @@ import org.springframework.core.env.MapPropertySource;
 public abstract class RefreshablePropertySource extends MapPropertySource {
 
 
+	// source 为 map
 	public RefreshablePropertySource(String name, Map<String, Object> source) {
 		super(name, source);
 	}

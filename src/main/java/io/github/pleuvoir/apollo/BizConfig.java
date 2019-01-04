@@ -6,6 +6,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+/**
+ * 继承了 RefreshableConfig 后变拥有了刷新的功能，提供刷新源即可
+ * @author pleuvoir
+ *
+ */
 @Component
 public class BizConfig extends RefreshableConfig {
 
