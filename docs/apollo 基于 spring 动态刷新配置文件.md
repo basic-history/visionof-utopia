@@ -110,6 +110,7 @@ public abstract class RefreshableConfig {
 	 */
 	protected abstract List<RefreshablePropertySource> getRefreshablePropertySources();
 
+	// 第一次时将自定义的  RefreshablePropertySource 加入，以后不断的刷新就行
 	@PostConstruct
 	public void setup() {
 
@@ -182,6 +183,16 @@ public abstract class RefreshableConfig {
 		return environment.getProperty(key);
 	}
 
+}
+```
+
+其中 `spring` 创建 `StandardEnvironment` 时是这样 
+
+```java
+@Override
+protected void customizePropertySources(MutablePropertySources propertySources) {
+	propertySources.addLast(new MapPropertySource(SYSTEM_PROPERTIES_PROPERTY_SOURCE_NAME, getSystemProperties()));
+	propertySources.addLast(new SystemEnvironmentPropertySource(SYSTEM_ENVIRONMENT_PROPERTY_SOURCE_NAME, getSystemEnvironment()));
 }
 ```
 
